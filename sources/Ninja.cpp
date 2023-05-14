@@ -38,15 +38,17 @@ string Ninja::print() const {
     return "Type: Ninja, " + character::print();
 }
 
-bool Ninja::operator==(const Ninja& other) const {
-    // Perform the comparison of member variables in the base class
-    if (!(character::operator==(other))) {
-        return false;
-    }
 
-    // Perform the comparison of member variables in the derived class
-    return (this->speed == other.speed) && (this->hitpoints == other.hitpoints);
-}
+
+// bool Ninja::operator==(const Ninja& other) const {
+//     // Perform the comparison of member variables in the base class
+//     if (!(character::operator==(other))) {
+//         return false;
+//     }
+
+//     // Perform the comparison of member variables in the derived class
+//     return (this->speed == other.speed) && (this->hitpoints == other.hitpoints);
+// }
 
 
 

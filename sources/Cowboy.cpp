@@ -46,15 +46,15 @@ string Cowboy::print() const {
     return info;
 }
 
-bool Cowboy::operator==(const Cowboy& other) const {
-    // Perform the comparison of member variables in the base class
-    if (!(character::operator==(other))) {
-        return false;
-    }
-    // Perform the comparison of member variables
-    return (this->name == other.name) && (this->location == other.location) &&
-           (this->balls == other.balls) && (this->hitPoints == other.hitPoints);
-}
+// bool Cowboy::operator==(const Cowboy& other) const {
+//     // Perform the comparison of member variables in the base class
+//     if (!(character::operator==(other))) {
+//         return false;
+//     }
+//     // Perform the comparison of member variables
+//     return (this->name == other.name) && (this->location == other.location) &&
+//            (this->balls == other.balls) && (this->hitPoints == other.hitPoints);
+// }
 
 
 } 

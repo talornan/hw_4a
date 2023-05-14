@@ -40,7 +40,12 @@ public:
      */
     string print() const override;
 
-    bool operator==(const Cowboy& other) const;
+    // bool operator==(const Cowboy& other) const;
+
+    virtual Point getLocation() const override {
+        return this->location;
+    }
+
 
 };
 

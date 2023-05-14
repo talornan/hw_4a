@@ -38,7 +38,7 @@ public:
     /*
      * Print information about the ninja.
      */
-    virtual string print() const ;
+    virtual string print() const override ;
 
     // Getter and Setter methods
 
@@ -50,7 +50,11 @@ public:
         speed = newSpeed;
     }
 
-    bool operator==(const Ninja& other) const; 
+    virtual Point getLocation() const override {
+        return this->location;
+    }
+
+    // bool operator==(const Ninja& other) const; 
 };
 
 // YoungNinja derived class

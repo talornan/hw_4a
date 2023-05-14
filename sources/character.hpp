@@ -28,9 +28,8 @@ namespace ariel
             this->name = newName;
         }
 
-        Point getLocation() const {
-            return this->location;
-        }
+        virtual Point getLocation() const;
+
         void setLocation(Point newLocation){
             this->location = newLocation;
         }
@@ -42,6 +41,8 @@ namespace ariel
         void setHitPoints(int newHitPoints){
             this->hitPoints=newHitPoints;
         }
+
+        
 
 
         /*
@@ -57,12 +58,13 @@ namespace ariel
          * @param other The other character.
          * @return The distance between the characters.
          */
-        double distance(character& other);
+        double distance(const character& other) const;
+
 
         /*
          * Print information about the character.
          */
-        virtual string  print() const = 0;
+        virtual string  print() const;
 
         /*
          * Inflict damage to the character.
@@ -71,7 +73,9 @@ namespace ariel
          */
         void hit(int damage) ;
 
-        bool operator==(const character& other) const;
+        // bool operator==(const character& other) const;
+
+        character& operator=(const character& other);
 
         // Destructor
         virtual ~character();

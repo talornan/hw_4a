@@ -11,12 +11,21 @@ namespace ariel
         if (members.size() >= 10) {
             throw runtime_error("Exceeded maximum number of participants in the team");
         }
+            // Check if the character already exists in the team
+        for (const auto& member : members) {
+            if (member == fighter) {
+                throw runtime_error("Character already exists in the team");
+            }
+        }
+
         members.push_back(fighter);
-}
+    }
+
 
 
     // Helper function to find the closest living enemy character to the given character
-    character* Team::findClosestEnemy(character* characterObj, vector<character*>& enemies) {
+    
+    character* Team::findClosestEnemy(character* characterObj, const vector<character*>& enemies){
         character* closestEnemy = nullptr;
         double closestDistance = numeric_limits<double>::max();
 

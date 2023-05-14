@@ -24,11 +24,24 @@ public:
     // Constructor
     Team(character* leader);
 
+    //getter and setter methods
+   vector<character*> getMembers(){
+    return this->members;
+    }
+
+    void setLeader(character* leader2){
+        this->leader = leader2;
+    }
+
+    character* getLeader(){
+        return this->leader;
+    }
+
     // Add a Fighter (Ninja or Samurai) to the team
     virtual void add(character* fighter);
 
     // Helper function to find the closest living enemy character to the given character
-    character* findClosestEnemy(character* characterObj, vector<character*>& enemies);
+    character* findClosestEnemy(character* characterObj, const vector<character*>& enemies);
 
     // Attack an enemy team
     void attack(Team* enemyTeam);
