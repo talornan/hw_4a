@@ -9,7 +9,7 @@ namespace ariel
 {
 
 class Cowboy : public character {
-private:
+protected:
     int balls;
     int hitPoints;
 
@@ -30,6 +30,10 @@ public:
      */
     bool hasBullets() const;
 
+    int getBullets() const {
+        return this->balls;
+    }
+
     /*
      * Reload the Cowboy's gun.
      */
@@ -41,11 +45,6 @@ public:
     string print() const override;
 
     // bool operator==(const Cowboy& other) const;
-
-    virtual Point getLocation() const override {
-        return this->location;
-    }
-
 
 };
 

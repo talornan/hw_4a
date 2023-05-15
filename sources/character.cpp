@@ -3,8 +3,8 @@
 namespace ariel
 {
 
-character::character(const string& name, const Point& location) 
-    : name(name), location(location), hitPoints(0) {}
+character::character(const string& name, const Point& location,int hitPoints) 
+    : name(name), location(location), hitPoints(hitPoints) ,status(false){}
 
 bool character::isAlive() const{
     return hitPoints>0;
@@ -14,9 +14,6 @@ double character::distance(const character& other) const{
     return this->location.distance(other.getLocation());
 }
 
- Point character:: getLocation() const {
-            return this->location;
-        }
 
 void character::hit(int damage)  {
     hitPoints -= damage;
@@ -30,6 +27,10 @@ string character::print() const {
     return result;
 }
 
+const Point& character:: getLocation() const {
+        return this->location;
+ }
+
 character& character::operator=(const character& other) {
     if (this != &other) {
         // Perform the assignment of member variables
@@ -39,6 +40,7 @@ character& character::operator=(const character& other) {
     }
     return *this;
 }
+
 
 character :: ~character(){}
 

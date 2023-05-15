@@ -14,11 +14,12 @@ namespace ariel
         Point location;
         string name;
         int hitPoints;
+        bool status;
 
     public:
-        character(const string& name, const Point& location);
+        character(const string& name, const Point& location,int hitPoints);
 
-        //getter & setter
+        //getter And setter methods
 
         string getName() const{
             return this->name;
@@ -28,17 +29,18 @@ namespace ariel
             this->name = newName;
         }
 
-        virtual Point getLocation() const ;
+        const Point& getLocation() const;
 
-        void setLocation(Point newLocation){
+
+        virtual void setLocation(Point newLocation){
             this->location = newLocation;
         }
 
-        int getHitPoints() const{
+        virtual int getHealth() const {
             return this->hitPoints;
         }
 
-        void setHitPoints(int newHitPoints){
+        virtual void setHitPoints(int newHitPoints){
             this->hitPoints=newHitPoints;
         }
 
@@ -76,7 +78,14 @@ namespace ariel
         // bool operator==(const character& other) const;
 
         character& operator=(const character& other);
+        
+        bool getStatus() {
+            return this->status;
+        }
 
+        void setStatus(bool ans) {
+            this->status = ans;
+        }
         // Destructor
         virtual ~character();
     };

@@ -9,7 +9,7 @@ using namespace std;
 namespace ariel
 {
     class Point{
-        private :
+        protected:
             double x;
             double y;
         
@@ -55,7 +55,7 @@ namespace ariel
         * @param dis The maximum distance to move towards the destination.
         * @return The Point that is at most the specified distance away from the destination.
         */    
-            Point moveTowards(Point& src,Point& dest,double dis) const;
+        static Point moveTowards(const Point src,const Point dest,double dis) ;
 
             bool operator==(const Point& other) const;
 

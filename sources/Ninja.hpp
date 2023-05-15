@@ -9,7 +9,7 @@ namespace ariel
 class Ninja : public character {
 protected:
     int speed;
-    int hitpoints;
+    int health;
 
 public:
     /*
@@ -19,7 +19,7 @@ public:
      * @param location The initial location of the ninja.
      * @param speed The speed of the ninja.
      */
-    Ninja(const string& name, const Point& location, int speed);
+    Ninja(const string& name, const Point& location,int health, int speed);
 
     /*
      * Move towards an enemy character.
@@ -38,30 +38,31 @@ public:
     /*
      * Print information about the ninja.
      */
-    virtual string print() const override ;
+    string print() const override;
 
     // Getter and Setter methods
 
-    int getSpeed() const {
+    virtual int getSpeed() const {
         return speed;
     }
 
-    void setSpeed(int newSpeed) {
+    virtual void setSpeed(int newSpeed) {
         speed = newSpeed;
     }
 
-    virtual Point getLocation() const override {
+    virtual Point getLocation() const {
         return this->location;
     }
+
+    // virtual int getHealth() const{
+    //     return this->hitPoints;
+    // }
 
     // bool operator==(const Ninja& other) const; 
 };
 
 // YoungNinja derived class
 class YoungNinja : public Ninja {
-private:
-    static const int SPEED = 14;
-    int hitpoints;
 
 public:
     YoungNinja(const string& name, const Point& location);
@@ -70,10 +71,6 @@ public:
 
 // TrainedNinja derived class
 class TrainedNinja : public Ninja {
-private:
-    static const int SPEED = 12;
-    int hitpoints;
-
 public:
     TrainedNinja(const string& name, const Point& location);
 
@@ -81,10 +78,6 @@ public:
 
 // OldNinja derived class
 class OldNinja : public Ninja {
-private:
-    static const int SPEED = 8;
-    int hitpoints;
-
 public:
     OldNinja(const string& name, const Point& location);
 };

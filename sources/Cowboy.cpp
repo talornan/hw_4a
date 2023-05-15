@@ -4,7 +4,7 @@ namespace ariel
 {
 
 Cowboy::Cowboy(const string& name, const Point& location)
-    : character(name, location), balls(6), hitPoints(110) {
+    : character(name, const_cast<Point&>(location),110), balls(6) {
     // Constructor implementation
 }
 

@@ -12,16 +12,15 @@ namespace ariel
         return "(" + to_string(x) + ", " + to_string(y) +")" ;
     }
 
-    Point Point::moveTowards(Point& src, Point& dest, double dist) const {
-        double currentDistance = sqrt(pow((dest.x - src.x),2) + pow((dest.y - src.y),2));
-
+    Point Point::moveTowards(const Point src,const Point dest, double dist) {
+        double currentDistance = src.distance(dest);
         if (currentDistance <= dist) {
             return dest;
         } 
         else {
             double ratio = dist / currentDistance;
-            double newX = src.x + (dest.x - x)* ratio;
-            double newY = src.y + (dest.y - y) * ratio;
+            double newX = src.x + (dest.x - src.x) * ratio;
+            double newY = src.y + (dest.y - src.y) * ratio;
             return Point(newX, newY);
         }
     }
