@@ -28,7 +28,7 @@ namespace ariel
             this->name = newName;
         }
 
-        virtual Point getLocation() const;
+        virtual Point getLocation() const ;
 
         void setLocation(Point newLocation){
             this->location = newLocation;
